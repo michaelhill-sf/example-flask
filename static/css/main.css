@@ -46,7 +46,7 @@ body {
        -moz-border-radius: 6px;
             border-radius: 6px;
   }
-  title {
+  h1 {
     font-size: 2em;
     color: blue;
   }
