@@ -1,9 +1,12 @@
-from flask import Flask
+import datetime
+from flask import Flask, render_template
+
 app = Flask(__name__)
 
 @app.route('/')
+
 def hello_world():
-    return 'Hello Michael'
+    return render_template('index.html', utc_dtc=datetime.datetime.utcnow())
 
 if __name__ == "__main__":
     app.run()
