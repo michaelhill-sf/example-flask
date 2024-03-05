@@ -64,13 +64,15 @@ body {
     color: #999;
   }
   p {
-    font-size: 1.7em;
+    font-size: 5em;
     font-weight: 100;
     margin-top: 30px;
     letter-spacing: -1px;
     color: #999;
   }
-  form {
+  input {
+    font-size: 5em;
+    font-weight: 100;
     text-align: center;
   }
   .menu {
