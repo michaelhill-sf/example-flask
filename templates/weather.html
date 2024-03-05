@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <h1>Weather Forecast for {{ location }}</h1>
+    <p>{{ forecast }}</p>
+    <a href="/">Back</a>
+</body>
+</html>

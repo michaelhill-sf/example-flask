@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FlaskApp</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
-    <h1>Hello Michael!</h1>
-    <h2>Welcome to FlaskApp!</h2>
-    <h3>{{ utc_dt }}</h3>
+    <h1>Hello {{ user_name }}!</h1>
+    <h2>Welcome to the Weather App!</h2>
+    <h3>UTC {{ utc_dt }}</h3>
+    <form action="/weather" method="post">
+        <input type="text" name="location" value="{{ default_location }}" placeholder="Enter location" required>
+        <button type="submit">Get Weather</button>
+    </form>
 </body>
 </html>

@@ -60,9 +60,18 @@ body {
     font-size: 1.7em;
     font-weight: 100;
     margin-top: 30px;
-    text-align: center;
     letter-spacing: -1px;
     color: #999;
+  }
+  p {
+    font-size: 1.7em;
+    font-weight: 100;
+    margin-top: 30px;
+    letter-spacing: -1px;
+    color: #999;
+  }
+  form {
+    text-align: center;
   }
   .menu {
     float: right;
