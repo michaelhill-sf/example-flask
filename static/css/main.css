@@ -71,12 +71,13 @@ body {
     color: #999;
   }
   input {
-    font-size: 5em;
+    font-size: 4em;
+
     font-weight: 100;
     text-align: center;
   }
   button {
-    font-size: 5em;
+    font-size: 2.5em;
     font-weight: 100;
     text-align: center;
     background-color: blue;
@@ -84,6 +85,7 @@ body {
   }
   .container {
     display: flex;
+    border: 2px solid black;
     flex-direction: column;
     align-items: center;
     padding: 20px;
