@@ -5,8 +5,45 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
-    <h1>Weather Forecast for {{ location }}</h1>
-    <p>{{ forecast }}</p>
-    <a href="/">Back</a>
+    <table style="margin-left: auto; margin-right: auto; width: 636px;">
+        <tbody>
+        <tr>
+        <td style="width: 295px;">
+        <h4>{{ location }} as of 7:01 am PST</h4>
+        </td>
+        <td style="width: 198.641px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+        <td style="width: 116.359px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+        <td style="width: 295px;">
+        <h1><strong>53&ordm;</strong></h1>
+        </td>
+        <td style="width: 198.641px;">&nbsp;</td>
+        <td style="width: 116.359px;"><img src="{{ wIcon }}" alt="" width="86" height="86" /></td>
+        </tr>
+        <tr>
+        <td style="width: 295px;"><strong>{{ shortForecast }}</strong>&nbsp;</td>
+        <td style="width: 198.641px;" colspan="2">
+        <h4 style="text-align: right;">&nbsp;Rain continuing through 12 pm.&nbsp;</h4>
+        </td>
+        </tr>
+        <tr>
+        <td style="width: 295px;">&nbsp;H:{{ highTemp }}&ordm;/L:{{ lowTemp }}&ordm;</td>
+        <td style="width: 198.641px;">&nbsp;</td>
+        <td style="width: 116.359px;">&nbsp;</td>
+        </tr>
+        <tr>
+        <td style="width: 295px;">&nbsp;</td>
+        <td style="width: 198.641px;">&nbsp;</td>
+        <td style="width: 116.359px;">&nbsp;</td>
+        </tr>
+        <tr>
+        <td style="width: 295px;" colspan="3">
+        <h3>{{ forecast }}</h3>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <h1 style="text-align: center;"><a href="/">Back</a></h1>
 </body>
 </html>

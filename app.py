@@ -3,6 +3,7 @@ from flask import Flask, render_template, request
 from geopy.geocoders import Nominatim
 import requests
 import logging
+import json
 
 app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -39,7 +40,7 @@ def weather():
     forecast = get_weather_forcast(location)
 
     logging.debug("In weather(): location='{}'",location)
-    return render_template('weather.html', location=location, forecast=forecast)
+    return render_template('weather.html', location=location, forecast=forecast["detailedForecast"], highTemp=forecast["highTemp"], lowTemp=forecast["lowTemp"], wIcon=forecast["wIcon"], shortForecast=forecast["shortForecast"])
 
 def get_weather_forcast(location):
     #geolocator = Nominatim(user_agent="mhill-weather")
@@ -52,8 +53,20 @@ def get_weather_forcast(location):
         response = requests.get(url)
         data = response.json()
         # Simplified extraction of forecast data
-        logging.debug(data)
-        forecast = data['properties']['periods'][0]['detailedForecast']
+
+        logging.debug(json.dumps(data, indent=4))
+        detailedForecast = data['properties']['periods'][0]['detailedForecast']
+        shortForecast = data['properties']['periods'][0]['shortForecast']
+        highTemp = data['properties']['periods'][0]['temperature']
+        wIcon = data['properties']['periods'][0]['icon']
+        lowTemp = data['properties']['periods'][1]['temperature']
+        forecast = {
+            'detailedForecast':detailedForecast,
+            'shortForecast':shortForecast,
+            'highTemp':highTemp,
+            'wIcon':wIcon,
+            'lowTemp':lowTemp
+            }
         return forecast
     else:
         logging.ERROR("Location not found.")

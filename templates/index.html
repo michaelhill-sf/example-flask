@@ -6,12 +6,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
-    <h1>Hello {{ user_name }}!</h1>
-    <h2>Welcome to the Weather App!</h2>
-    <h3>UTC {{ utc_dt }}</h3>
+    <h2 style="text-align: center;">Welcome to the Weather App!</h2>
     <form action="/weather" method="post">
-        <input type="text" name="location" value="{{ default_location }}" placeholder="Enter location" required>
-        <button type="submit">Get Weather</button>
+        <table style="margin-left: auto; margin-right: auto;">
+            <tbody>
+                <tr>
+                <td><input name="location" required="" type="text" value="{{ default_location }}" placeholder="Enter location" /></td>
+                </tr>
+                <tr>
+                <td><button type="submit">Get Weather</button></td>
+                </tr>
+            </tbody>
+        </table>
     </form>
 </body>
 </html>
