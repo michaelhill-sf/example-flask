@@ -26,7 +26,7 @@ def get_gridpoint(lat, lon):
         gridY = properties.get('gridY', 'Not found')
         return gridId, gridX, gridY
     else:
-        return 'Error', 'Error', 'Error'
+        return 'Error', 'Error', 'Error' 
 
 @app.route('/')
 def home():
