@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weather Forecast</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
-    <table style="margin-left: auto; margin-right: auto; width: 636px;">
+    <table style="margin-left: auto; margin-right: auto; width: 90%;">
         <tbody>
         <tr>
-        <td style="width: 295px;">
-        <h4>{{ location }} as of 7:01 am PST</h4>
+        <td style="width: 80%;">
+        <h4>{{ location }} as of {{ generatedTime }}</h4>
         </td>
-        <td style="width: 198.641px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-        <td style="width: 116.359px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
         </tr>
         <tr>
-        <td style="width: 295px;">
-        <h1><strong>53&ordm;</strong></h1>
+        <td style="width: 60%;">
+        <h1><strong>{{ currentTemp }}&ordm;</strong></h1>
         </td>
-        <td style="width: 198.641px;">&nbsp;</td>
-        <td style="width: 116.359px;"><img src="{{ wIcon }}" alt="" width="86" height="86" /></td>
+        <td>&nbsp;</td>
+        <td><img src="{{ wIcon }}" alt="" width="86" height="86" /></td>
         </tr>
         <tr>
-        <td style="width: 295px;"><strong>{{ shortForecast }}</strong>&nbsp;</td>
-        <td style="width: 198.641px;" colspan="2">
-        <h4 style="text-align: right;">&nbsp;Rain continuing through 12 pm.&nbsp;</h4>
+        <td><strong>{{ shortForecast }}</strong>&nbsp;</td>
+        <td colspan="2">
+        <h4 style="text-align: right;">&nbsp;HC[Rain continuing through 12 pm.]&nbsp;</h4>
         </td>
         </tr>
         <tr>
-        <td style="width: 295px;">&nbsp;H:{{ highTemp }}&ordm;/L:{{ lowTemp }}&ordm;</td>
-        <td style="width: 198.641px;">&nbsp;</td>
-        <td style="width: 116.359px;">&nbsp;</td>
+        <td>&nbsp;H:{{ highTemp }}&ordm;/L:{{ lowTemp }}&ordm;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
         </tr>
         <tr>
-        <td style="width: 295px;">&nbsp;</td>
-        <td style="width: 198.641px;">&nbsp;</td>
-        <td style="width: 116.359px;">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
         </tr>
         <tr>
-        <td style="width: 295px;" colspan="3">
+        <td colspan="3">
         <h3>{{ forecast }}</h3>
         </td>
         </tr>
